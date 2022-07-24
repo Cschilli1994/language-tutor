@@ -8,11 +8,13 @@ import { createCategory, fetchCategories } from "../../stores/categories";
     $: name = name?.toLowerCase()
 
     function handleSubmit() {
-        createCategory({name}).then(async (res) => {
+        if (name.length > 3) {
+            createCategory({name}).then(async (res) => {
            await fetchCategories()
            show = false;
            name = null;
         })
+        }
     }
 </script>
 <button class="border-2 border-gray-700 hover:border-rose-400 drop-shadow w-5 h-5 text-gray-700 hover:text-rose-400 flex justify-center items-center font-semibold rounded-full" on:click|preventDefault={()=> show=!show}><span>+</span></button>
