@@ -12,7 +12,7 @@
 </script>
 
 <div class="min-h-screen flex flex-col py-16 justify-center items-center relative ">
-	<div class="w-80 py-6 absolute top-0 bg-white rounded-xl px-4 mt-4 mb-3"><CategorySelect on:selectCategory={(e) => category = e.detail.id} /></div>
+	<div class="w-80 py-4 absolute top-0 bg-white rounded-xl px-4 mt-5 mb-5"><CategorySelect on:selectCategory={(e) => category = e.detail.id} /></div>
 	<div class="h-full flex flex-col justify-center items-center">
 		{#await fetchCards(category)}
 		<div class="fixed top-1/2">
