@@ -1,7 +1,7 @@
 <script lang="ts">
 
-	let email: string;
-	
+	let email;
+
 </script>
 
 

@@ -2,16 +2,19 @@
 import Card from "$lib/cards/Card.svelte";
 import { createCard } from "../../stores/cards";
 import { fade } from "svelte/transition";
+import CategorySelect from "$lib/vocab-management/CategorySelect.svelte";
+
 
     let english, portuguese, image;
+    let category = null;
     let phrase = {english, portuguese, image};
-    $: phrase = {english, portuguese, image}
+    $: phrase = {category, english, portuguese, image}
 
     const submit = async () => {
-        if (english && portuguese && image) {
+        if (english && portuguese && image && category) {
             try {
                 console.log("CREATE CARD")
-                await createCard({english, portuguese, image})
+                await createCard(phrase)
                 english = "";
                 portuguese = "";
                 image = "";
@@ -27,6 +30,7 @@ import { fade } from "svelte/transition";
     <Card phrase={phrase} onComplete={()=>{}}/>
         <div class="w-96 p-3">
             <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <CategorySelect on:selectCategory={(e) => category = e.detail.id} />
               <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="english">
                   Phrase in English
