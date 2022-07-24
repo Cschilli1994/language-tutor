@@ -1,3 +1,10 @@
+<script lang="ts">
+
+	let email: string;
+	
+</script>
+
+
 <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
 	<div class="max-w-md w-full space-y-8">
 		<div>
@@ -16,6 +23,7 @@
 				<div>
 					<label for="email-address" class="sr-only">Email address</label>
 					<input
+						bind:value={email}
 						id="email-address"
 						name="email"
 						type="email"
@@ -25,7 +33,7 @@
 						placeholder="Email address"
 					/>
 				</div>
-				<div>
+				<!-- <div>
 					<label for="password" class="sr-only">Password</label>
 					<input
 						id="password"
@@ -36,7 +44,7 @@
 						class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
 						placeholder="Password"
 					/>
-				</div>
+				</div> -->
 			</div>
 
 			<div>

@@ -1,10 +1,25 @@
-<script>
+<script >
 import Card from "$lib/cards/Card.svelte";
+import { createCard } from "../../stores/cards";
 import { fade } from "svelte/transition";
 
-    let original, translation, image;
-    let phrase = {original, translation, image};
-    $: phrase = {original, translation, image}
+    let english, portuguese, image;
+    let phrase = {english, portuguese, image};
+    $: phrase = {english, portuguese, image}
+
+    const submit = async () => {
+        if (english && portuguese && image) {
+            try {
+                console.log("CREATE CARD")
+                await createCard({english, portuguese, image})
+                english = "";
+                portuguese = "";
+                image = "";
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    }
 </script>
 
 
@@ -16,13 +31,13 @@ import { fade } from "svelte/transition";
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="english">
                   Phrase in English
                 </label>
-                <input bind:value={translation} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="english" type="text" placeholder="Horse">
+                <input bind:value={english} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="english" type="text" placeholder="Horse">
               </div>
               <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="portuguese">
                   Phrase in Portuguese
                 </label>
-                <input bind:value={ original} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="portuguese" type="text" placeholder="Cavalo">
+                <input bind:value={portuguese} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="portuguese" type="text" placeholder="Cavalo">
               </div>
               <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
@@ -31,7 +46,7 @@ import { fade } from "svelte/transition";
                 <input bind:value={image} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="image" type="text" placeholder="http://www.image.img">
               </div>
               <div class="flex items-center justify-center w-full">
-                <button class="bg-rose-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                <button on:click|preventDefault={submit} class="bg-rose-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                   Submit
                 </button>
               </div>
