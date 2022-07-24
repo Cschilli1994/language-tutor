@@ -40,8 +40,16 @@ import { createCategory, fetchCategories } from "../../stores/categories";
                 </div>
               </div>
               <div class="bg-gray-50 px-4 py-3 sm:px-6 flex justify-between">
-                <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" on:click|preventDefault={()=>show = !show}>Cancel</button>
-                <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-rose-400 text-base font-medium text-white hover:bg-rose-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm" on:click|preventDefault={handleSubmit}>Add</button> 
+                <button 
+                    type="button" 
+                    class="bg-white text-gray-700 font-bold py-2 px-4 rounded border-gray-700 border focus:shadow-outline" 
+                    on:click|preventDefault={()=>show = !show}
+                    >Cancel</button>
+                <button 
+                    type="button" 
+                    class="bg-rose-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+                    on:click|preventDefault={handleSubmit}
+                    >Add</button> 
               </div>
             </div>
           </div>
