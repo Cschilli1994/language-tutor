@@ -1,0 +1,17 @@
+{
+    "short_name": "language-trainer",
+    "name": "language-trainer-pwa",
+    "start_url": "/",
+    "icons": [
+      {
+        "src": "logo.png",
+        "type": "image/png",
+        "sizes": ["200x200", "144x144"]
+      }
+    ],
+    "background_color": "#3367D6",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#3367D6",
+    "description": "Language Training Flash Cards"
+}
