@@ -8,9 +8,10 @@ interface ICard {
 }
 export const cards = writable<ICard[]>([])
 
-export const fetchCards = async (): Promise<any> => {
-    const { data, error } = await supabase.from("cards").select();
-
+export const fetchCards = async (category: number | null): Promise<any> => {
+    const query = supabase.from("cards").select();
+    if (category) query.eq("category", category)
+    const {data, error} = await query;
     if (error) return console.log(error)
 
     return cards.set(data);
