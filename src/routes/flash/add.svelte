@@ -11,6 +11,7 @@ import CategorySelect from "$lib/vocab-management/CategorySelect.svelte";
     $: phrase = {category, english, portuguese, image}
 
     const submit = async () => {
+      console.log({category})
         if (english && portuguese && image && category) {
             try {
                 console.log("CREATE CARD")

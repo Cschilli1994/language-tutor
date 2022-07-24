@@ -13,7 +13,7 @@ import AddCategory from './AddCategory.svelte';
     function selectCategory(index) {
         selectedIndex = index;
         show = false;
-        dispatch("selectCategory", categories[index])
+        dispatch("selectCategory", $categories[index])
     }
 </script>
 
