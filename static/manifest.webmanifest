@@ -6,7 +6,7 @@
       {
         "src": "logo.png",
         "type": "image/png",
-        "sizes": ["200x200", "144x144"]
+        "sizes": "200x200"
       }
     ],
     "background_color": "#3367D6",
