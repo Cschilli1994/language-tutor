@@ -19,7 +19,7 @@ import { fade } from "svelte/transition";
    
   
           {#if show}
-          <button  on:click={transitionCard} class="group w-80  rounded overflow-hidden shadow-lg">
+          <button  on:click={transitionCard}   class="group w-80  rounded-3xl overflow-hidden shadow-lg border-white border-8">
             <div class="w-full aspect-w-5 aspect-h-5 bg-gray-200 rounded-t-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                 <img src={phrase.image} alt="" class="w-full h-96 object-center object-cover group-hover:opacity-75">
             </div>
@@ -31,7 +31,7 @@ import { fade } from "svelte/transition";
             </div>
             </button>
           {:else}
-          <button in:fade="{{duration: 750}}" on:click={showTranslation} class="group w-80 rounded overflow-hidden shadow-lg">
+          <button   on:click={showTranslation} class="group w-80 rounded-3xl overflow-hidden shadow-lg border-white border-8">
             <div class="w-full aspect-w-5 aspect-h-5 bg-gray-200 rounded-t-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                 <img src={phrase.image} alt="" class="w-full  h-96 object-center object-cover group-hover:opacity-75">
             </div>

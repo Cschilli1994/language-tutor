@@ -34,8 +34,8 @@
 	const cycleCard = () => selectedPhrase >= phrases.length -1 ? selectedPhrase = 0 : selectedPhrase = ++selectedPhrase
 </script>
 
-<div class="min-h-screen flex flex-col ">
-    <h1> Flash Cards</h1>
+<div class="min-h-screen flex flex-col py-16 ">
+  
 	<div class="h-full flex flex-col justify-center items-center">
         <Card  phrase={phrases[selectedPhrase]} onComplete={cycleCard}/>
     </div>

@@ -3,17 +3,25 @@
 	import '../app.css';
 </script>
 
-<Header />
 
-<main>
-	<slot />
-</main>
 
-<footer>
-	<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-</footer>
+	<Header />
+	
+		<slot />
+	
+	
+
+
+
+
+
 
 <style>
+	html, body {
+		margin: 0;
+		padding: 0;
+		height: 100%;
+	}
 	main {
 		flex: 1;
 		display: flex;
